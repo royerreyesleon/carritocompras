@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { SocialItemComponent } from './components/social-item/social-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ArticleComponent } from './components/article/article.component';
     HeaderComponent,
     SlideshowComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    BreadcrumbComponent,
+    SocialItemComponent
   ],
   imports: [
     BrowserModule,
