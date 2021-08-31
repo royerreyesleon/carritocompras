@@ -12,6 +12,9 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { SocialItemComponent } from './components/social-item/social-item.component';
+import { CategoryComponent } from './components/category/category.component';
+import { SubcategoryComponent } from './components/subcategory/subcategory.component';
+import { ArticleItemComponent } from './components/article-item/article-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { SocialItemComponent } from './components/social-item/social-item.compon
     ArticlesComponent,
     ArticleComponent,
     BreadcrumbComponent,
-    SocialItemComponent
+    SocialItemComponent,
+    CategoryComponent,
+    SubcategoryComponent,
+    ArticleItemComponent
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,7 @@ HEADER
 				BOTÓN CATEGORÍAS
 				======================================-->
 
-				<div class="col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">
+				<div class="col-md-4 col-sm-4 col-xs-12 backColor" id="btnCategorias" (click)="clickCategories()">
 					
 					<p>CATEGORÍAS
 					
@@ -54,7 +54,7 @@ HEADER
 
 					<span class="input-group-btn">
 						
-						<a href="https://ecommerce.tutorialesatualcance.com/buscador/1/recientes">
+						<a routerLink="/buscador">
 
 							<button class="btn btn-default backColor" type="submit" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">
 								
@@ -76,7 +76,7 @@ HEADER
 
 			<div class="col-md-3 col-sm-2 col-xs-12" id="carrito">
 				
-				<a href="https://ecommerce.tutorialesatualcance.com/carrito-de-compras">
+				<a routerLink="/carrito-de-compras">
 
 					<button class="btn btn-default pull-left backColor" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);"> 
 						
@@ -86,7 +86,7 @@ HEADER
 				
 				</a>	
 
-				<p>TU CESTA <span class="cantidadCesta">0</span> <br> USD $ <span class="sumaCesta">0</span></p>	
+				<p>TU CESTA <span class="cantidadCesta">0</span> <br> MXN $ <span class="sumaCesta">0</span></p>	
 
 			</div>
 
@@ -96,59 +96,9 @@ HEADER
 		CATEGORÍAS
 		======================================-->
 
-		<div class="col-xs-12 backColor" id="categorias" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">
-
-			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-								
-								<h4>
-									<a href="https://ecommerce.tutorialesatualcance.com/ropa" class="pixelCategorias" titulo="ROPA" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">ROPA</a>
-								</h4>
-								
-								<hr>
-
-								<ul><li><a href="https://ecommerce.tutorialesatualcance.com/ropa-para-dama" class="pixelSubCategorias" titulo="Ropa para dama" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Ropa para dama</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/ropa-para-hombre" class="pixelSubCategorias" titulo="Ropa para hombre" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Ropa para hombre</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/ropa-deportiva" class="pixelSubCategorias" titulo="Ropa deportiva" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Ropa deportiva</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/ropa-infantil" class="pixelSubCategorias" titulo="Ropa infantil" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Ropa infantil</a></li></ul>
-
-							</div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-								
-								<h4>
-									<a href="https://ecommerce.tutorialesatualcance.com/calzado" class="pixelCategorias" titulo="CALZADO" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">CALZADO</a>
-								</h4>
-								
-								<hr>
-
-								<ul><li><a href="https://ecommerce.tutorialesatualcance.com/calzado-para-dama" class="pixelSubCategorias" titulo="Calzado para dama" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Calzado para dama</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/calzado-para-hombre" class="pixelSubCategorias" titulo="Calzado para hombre" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Calzado para hombre</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/calzado-deportivo" class="pixelSubCategorias" titulo="Calzado deportivo" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Calzado deportivo</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/calzado-infantil" class="pixelSubCategorias" titulo="Calzado infantil" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Calzado infantil</a></li></ul>
-
-							</div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-								
-								<h4>
-									<a href="https://ecommerce.tutorialesatualcance.com/tecnologia" class="pixelCategorias" titulo="TECNOLOGÍA" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">TECNOLOGÍA</a>
-								</h4>
-								
-								<hr>
-
-								<ul><li><a href="https://ecommerce.tutorialesatualcance.com/telefonos-movil" class="pixelSubCategorias" titulo="Teléfonos Móvil" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Teléfonos Móvil</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/tabletas-electronicas" class="pixelSubCategorias" titulo="Tabletas Electrónicas" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Tabletas Electrónicas</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/computadoras" class="pixelSubCategorias" titulo="Computadoras" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Computadoras</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/auriculares" class="pixelSubCategorias" titulo="Auriculares" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Auriculares</a></li></ul>
-
-							</div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-								
-								<h4>
-									<a href="https://ecommerce.tutorialesatualcance.com/cursos" class="pixelCategorias" titulo="CURSOS" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">CURSOS</a>
-								</h4>
-								
-								<hr>
-
-								<ul><li><a href="https://ecommerce.tutorialesatualcance.com/desarrollo-web" class="pixelSubCategorias" titulo="Desarrollo Web" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Desarrollo Web</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/aplicaciones-moviles" class="pixelSubCategorias" titulo="Aplicaciones Móviles" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Aplicaciones Móviles</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/diseno-grafico" class="pixelSubCategorias" titulo="Diseño Gráfico" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Diseño Gráfico</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/marketing-digital" class="pixelSubCategorias" titulo="Marketing Digital" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Marketing Digital</a></li></ul>
-
-							</div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
-								
-								<h4>
-									<a href="https://ecommerce.tutorialesatualcance.com/accesorios" class="pixelCategorias" titulo="ACCESORIOS" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">ACCESORIOS</a>
-								</h4>
-								
-								<hr>
-
-								<ul><li><a href="https://ecommerce.tutorialesatualcance.com/bolsos" class="pixelSubCategorias" titulo="Bolsos" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Bolsos</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/relojes" class="pixelSubCategorias" titulo="Relojes" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Relojes</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/pulseras" class="pixelSubCategorias" titulo="Pulseras" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Pulseras</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/collares" class="pixelSubCategorias" titulo="Collares" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Collares</a></li><li><a href="https://ecommerce.tutorialesatualcance.com/gafas-de-sol" class="pixelSubCategorias" titulo="Gafas de sol" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">Gafas de sol</a></li></ul>
-
-							</div>	
+		<div class="col-xs-12 backColor" id="categorias">
+			
+			<app-category></app-category>	
 
 		</div>
 

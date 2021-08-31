@@ -13,45 +13,45 @@ export class CategoryService {
   constructor() {
     
     this.items = [
-      {id: "1", name: "ROPA",
+      {id: "1", slug: "ropa", name: "ROPA",
         subcategory : [
-          {name : "Ropa para dama"},
-          {name : "Ropa para hombre"},
-          {name : "Ropa deportiva"},
-          {name : "Ropa infantil"},
+          {slug: "ropa-para-dama",   name : "Ropa para dama"},
+          {slug: "ropa-para-hombre", name : "Ropa para hombre"},
+          {slug: "ropa-deportiva",   name : "Ropa deportiva"},
+          {slug: "ropa-infantil",    name : "Ropa infantil"},
         ]
       },
-      {id: "2", name: "CALZADO",
+      {id: "2", slug: "calzado", name: "CALZADO",
         subcategory : [
-          {name : "Calzado para dama"},
-          {name : "Calzado para hombre"},
-          {name : "Calzado deportivo"},
-          {name : "Calzado infantil"},
+          {slug: "calzado-para-dama",   name : "Calzado para dama"},
+          {slug: "calzado-para-hombre", name : "Calzado para hombre"},
+          {slug: "calzado-deportivo",   name : "Calzado deportivo"},
+          {slug: "calzado-infantil",    name : "Calzado infantil"},
         ]
       },
-      {id: "3", name: "TECNOLOGÍA",
+      {id: "3", slug: "tecnologia", name: "TECNOLOGÍA",
         subcategory : [
-          {name : "Teléfonos Móvil"},
-          {name : "Tabletas Electrónicas"},
-          {name : "Computadoras"},
-          {name : "Auriculares"},
+          {slug: "teléfonos-movil",       name : "Teléfonos Móvil"},
+          {slug: "tabletas-electronicas", name : "Tabletas Electrónicas"},
+          {slug: "computadoras",          name : "Computadoras"},
+          {slug: "auriculares",           name : "Auriculares"},
         ]
       },
-      {id: "4", name: "CURSOS",
+      {id: "4", slug: "cursos", name: "CURSOS",
         subcategory : [
-          {name : "Desarrollo Web"},
-          {name : "Aplicaciones Móviles"},
-          {name : "Diseño Gráfico"},
-          {name : "Marketing Digital"},
+          {slug: "desarrollo-web",       name : "Desarrollo Web"},
+          {slug: "aplicaciones-moviles", name : "Aplicaciones Móviles"},
+          {slug: "diseno-grafico",       name : "Diseño Gráfico"},
+          {slug: "marketing-digital",    name : "Marketing Digital"},
         ]
       },
-      {id: "5", name: "ACCESORIOS",
+      {id: "5", slug: "accesorios", name: "ACCESORIOS",
         subcategory : [
-          {name : "Bolsos"},
-          {name : "Relojes"},
-          {name : "Pulseras"},
-          {name : "Collares"},
-          {name : "Gafas de sol"},
+          {slug: "bolsos",       name : "Bolsos"},
+          {slug: "relojes",      name : "Relojes"},
+          {slug: "pulseras",     name : "Pulseras"},
+          {slug: "collares",     name : "Collares"},
+          {slug: "gafas-de-sol", name : "Gafas de sol"},
         ]
       },
     ];

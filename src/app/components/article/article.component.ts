@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Article } from '../../models/Article';
+import { ArticlesService } from '../../services/articles/articles.service';
 
 declare var $:any;
 
@@ -12,84 +14,42 @@ export class ArticleComponent implements OnInit {
 
   // constructor() { }
 
+  // @Input() items!: Article[];
+  // @Input() items!: Article;
+  @Input() items!: Array<any>;
+
+
   constructor(
     private route: ActivatedRoute,
-  ) {}
+    public itemService: ArticlesService,
+  ) {
 
-  ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
-
-
-
-      /*=============================================
-      CARRUSEL
-      =============================================*/
-
-        /* $('.flexslider').flexslider({
-          animation: "slide",
-          rtl: true
-        }); */
-
-        $(".flexslider").flexslider({
-          animation: "slide",
-          controlNav: true,
-          animationLoop: false,
-          slideshow: false,
-          itemWidth: 100,
-          itemMargin: 5
-        });
-
-
-      
-
-      /*=============================================
-      EFECTO LUPA
-      =============================================*/
-      /* $(".infoproducto figure.visor img").mouseover((event: any) =>{
-
-        var capturaImg = $(this).attr("src");
-
-        $(".lupa img").attr("src", capturaImg);
-
-        $(".lupa").fadeIn("fast");
-
-        $(".lupa").css({
-
-          "height":$(".visorImg").height()+"px",
-          "background":"#eee",
-          "width":"100%"
-
-        })
-
-      })
-
-      $(".infoproducto figure.visor img").mouseout((event: any) =>{
-
-        $(".lupa").fadeOut("fast");
-
-      })
-
-      $(".infoproducto figure.visor img").mousemove((event: { offsetX: any; offsetY: any; }) =>{
-
-        var posX = event.offsetX;
-        var posY = event.offsetY;
-
-        $(".lupa img").css({
-
-          "margin-left":-posX+"px",
-          "margin-top":-posY+"px"
-
-        })
-
-      }) */
-    
+    // route.queryParams.subscribe(p => console.log('p.myQueryParam',p));
   }
 
 
+  ngOnInit(): void {
+    // const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
+
+    $(".flexslider").flexslider({
+      animation: "slide",
+      controlNav: true,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 100,
+      itemMargin: 5
+    });
+
+
+    $("html, body").animate({ scrollTop: "0" });
+
+    // MÁS PRODUCTOS.
+    this.items = this.itemService.serviceGetItems();
+  }
+
   imgClick(test:any){
-    console.log(test);
-    console.log('asd');
 
     $(".infoproducto figure.visor img").hide();
     $("#lupa"+test).show();
@@ -97,18 +57,15 @@ export class ArticleComponent implements OnInit {
   }
 
   over(test:any){
-    console.log(test);
 
     $(".lupa img").attr("src", test);
 
     $(".lupa").fadeIn("fast");
 
     $(".lupa").css({
-
       "height":$(".visorImg").height()+"px",
       "background":"#eee",
       "width":"100%"
-
     })
 
   }
@@ -118,7 +75,6 @@ export class ArticleComponent implements OnInit {
   }
 
   move(event:any){
-    // $(".lupa").fadeOut("fast");
 
     var posX = event.offsetX;
     var posY = event.offsetY;
@@ -130,5 +86,13 @@ export class ArticleComponent implements OnInit {
 
     })
   }
+
+  /* ngAfterViewInit() 
+  {
+      // Tu código ...
+      console.log('load...');
+  } */
+
+  
 
 }

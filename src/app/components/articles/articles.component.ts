@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ArticlesService } from '../../services/articles/articles.service';
+
+declare var $:any;
 
 @Component({
   selector: 'app-articles',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesComponent implements OnInit {
 
-  constructor() { }
+  // @Input() items!: Category[];
+  // @Input() items!: Object[];
+  @Input() items!: Array<any>;
+
+
+  constructor(public itemService: ArticlesService) { }
 
   ngOnInit(): void {
+
+    this.items = this.itemService.serviceGetItems();
+
+    $("html, body").animate({ scrollTop: "0" });
+
   }
 
 }
