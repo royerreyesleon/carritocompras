@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
+    // SI EL USUARIO YA ESTA LOGGEADO REDIRIGIR AL DASHBOARD.
     if(this.itemService.ServiceLoggedIn()){
       this.router.navigate(['/admin']);
     }
