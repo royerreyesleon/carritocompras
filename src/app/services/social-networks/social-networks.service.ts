@@ -29,37 +29,4 @@ export class SocialNetworksService {
     }
   }
 
-
-  /*
-  addTask(task:Task){
-    this.tasks.push(task);
-    // return false;
-    
-    let tasks : Task[] = [];
-
-    if (localStorage.getItem('tasks') === null) {
-      tasks.push(task);
-      // CONVERT ARRAY TO STRING WITH JSON.stringify 
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    }else{
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-      tasks.push(task);
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    }
-
-  }
-
-  deleteTask(task : Task){
-    for (let i = 0; i < this.tasks.length; i++) {
-      // const element = array[i];
-      if (task == this.tasks[i]) {
-        this.tasks.splice(i, 1);
-        
-        localStorage.setItem('tasks', JSON.stringify(this.tasks));
-
-      }
-      
-    }
-  }
-  */
 }
