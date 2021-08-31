@@ -5,9 +5,13 @@ import { HeaderComponent }      from './components/header/header.component';
 // import { HomeComponent }        from './components/home/home.component';
 import { ArticlesComponent }        from './components/articles/articles.component';
 import { ArticleComponent }        from './components/article/article.component';
+import { LoginComponent }        from './components/login/login.component';
+import { AdminComponent }        from './components/admin/admin.component';
 import { NavComponent }         from './components/nav/nav.component';
 import { SlideshowComponent }   from './components/slideshow/slideshow.component';
 import {APP_BASE_HREF}          from '@angular/common';
+
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
   // { path: '',         component: AboutComponent,  pathMatch: 'full'}
@@ -16,6 +20,8 @@ const routes: Routes = [
   // { path: 'inicio',      component: HomeComponent,},
   { path: 'articulos',      component: ArticlesComponent,},
   { path: 'articulo/:id',      component: ArticleComponent,},
+  { path: 'ingresar',      component: LoginComponent,},
+  { path: 'admin',      component: AdminComponent, canActivate:[AuthGuard]},
   // { path: 'acerca-de',   component: FooterComponent,},
   // { path: 'experiencia', component: HeaderComponent,},
   // { path: 'habilidades', component: NavComponent,},

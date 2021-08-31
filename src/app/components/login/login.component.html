@@ -1,0 +1,29 @@
+
+<div class="container">
+    
+    <div class="row" style="margin-top: 5%;margin-bottom: 5%;">
+        <div class="col-md-6 col-md-offset-3">
+
+            <h4 class="text-center">Iniciar Sesión</h4>
+
+            <form (submit)="loginSubmit(lUser, lPass)">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Escriba su usuario" value="admin" required #lUser>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Escriba su contraseña" value="admin" required #lPass>
+                </div>
+                
+                <div class="form-group text-center">
+                    <input type="submit" value="Ingresar" class="btn btn-default backColor" id="enviar">         
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
