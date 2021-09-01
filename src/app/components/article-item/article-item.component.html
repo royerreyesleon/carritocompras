@@ -3,7 +3,7 @@
 
     <figure>
         
-        <a routerLink="/articulo/{{item.slug}}" class="pixelProducto">
+        <a routerLink="/articulo/{{item.id}}" class="pixelProducto">
             
             <!-- <center> -->
             <img src="./assets/template/1/curso01.jpg" class="img-responsive" width="100%">
@@ -45,23 +45,17 @@
         
         <div class="btn-group pull-right">
             
-            <button type="button" class="btn btn-default btn-xs deseos" idproducto="400" data-toggle="tooltip" title="" data-original-title="Agregar a mi lista de deseos">
-                
-                <i class="fa fa-heart" aria-hidden="true"></i>
-
-            </button><button type="button" class="btn btn-default btn-xs agregarCarrito" idproducto="400" imagen="https://ecommerce.tutorialesatualcance.com/backend/vistas/img/productos/cursos/curso01.jpg" titulo="Crea aplicaciones con PHP" precio="10" tipo="virtual" peso="0" data-toggle="tooltip" title="" data-original-title="Agregar al carrito de compras">
-
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-
-                    </button><a href="https://ecommerce.tutorialesatualcance.com/crea-aplicaciones-con-php-47" class="pixelProducto">
+            <button type="button" class="btn btn-default btn-xs deseos">
+                <i class="fa fa-heart"></i>
+            </button>
             
-                <button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="" data-original-title="Ver producto">
-                    
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-
-                </button>	
+            <button type="button" class="btn btn-default btn-xs agregarCarrito">
+                <i class="fa fa-shopping-cart"></i>
+            </button>
             
-            </a>
+            <button type="button" class="btn btn-default btn-xs agregarCarrito">
+                <i class="fa fa-shopping-cart"></i>
+            </button>
 
         </div>
 

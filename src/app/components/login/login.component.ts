@@ -23,27 +23,31 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
   loginSubmit(lUser : any, lPass: any){
+
+    if(lUser.value == 'admin' && lPass.value == 'admin'){
     
-      console.log(lUser.value);
-      console.log(lPass.value);
-
-      this.itemService.ServiceLogin(lUser.value, lPass.value);
-
-      this.router.navigate(['/admin']);
-      
-      // lUser.value = '';
-      // lPass.value = '';
-  
-  
+      this.itemService.ServiceLogin();
       Swal.fire(
         'OK!',
         'Ahora puede administrar el sistema!',
         'success'
       );
-  
-      return false;
+      lUser.value = '';
+      lPass.value = '';  
+      this.router.navigate(['/admin']);
+    
+    }else{
+    
+      Swal.fire(
+        'INCORRECTO!',
+        'Usuario o Contraseña incorrecto!',
+        'error'
+      );
+    
+    }      
+    
+    return false;
   }
 
 

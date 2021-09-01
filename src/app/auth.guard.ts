@@ -17,11 +17,14 @@ export class AuthGuard implements CanActivate {
     
   }
 
+  // PREGUNTA SI EL USUARIO ESTA LOGUEADO.
   canActivate():boolean{
+    // SI ESTA LOGUEADO DEJARLO PASAR.
     if(this.loginService.ServiceLoggedIn()){
       return true;
     }
 
+    // SI NO ESTA LOGUEADO REDIRECCIONARLO AL LOGIN.
     this.router.navigate(['/ingresar']);
     return false;
   }

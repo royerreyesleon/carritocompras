@@ -5,7 +5,6 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent }         from './app.component';
 import { NavComponent }         from './components/nav/nav.component';
 import { FooterComponent }      from './components/footer/footer.component';
-import { HomeComponent }        from './components/home/home.component';
 import { HeaderComponent }      from './components/header/header.component';
 import { SlideshowComponent }   from './components/slideshow/slideshow.component';
 import { ArticlesComponent }    from './components/articles/articles.component';
@@ -16,16 +15,20 @@ import { CategoryComponent }    from './components/category/category.component';
 import { SubcategoryComponent } from './components/subcategory/subcategory.component';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { LoginComponent }       from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AuthGuard } from "./auth.guard";
-import { AdminComponent } from './components/admin/admin.component';
+import { TokenInterceptorService } from "./services/token-interceptor/token-interceptor.service";
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
+import { AdminConcernsComponent } from './components/admin-concerns/admin-concerns.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    HomeComponent,
     HeaderComponent,
     SlideshowComponent,
     ArticlesComponent,
@@ -34,15 +37,26 @@ import { AdminComponent } from './components/admin/admin.component';
     SocialItemComponent,
     CategoryComponent,
     SubcategoryComponent,
+    AdminComponent,
     ArticleItemComponent,
     LoginComponent,
-    AdminComponent
+    AdminProductsComponent,
+    AdminCategoriesComponent,
+    AdminConcernsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

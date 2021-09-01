@@ -1,0 +1,34 @@
+<div class="container-fluid well well-sm ">
+    <h2 class="text-center">Inquietudes</h2>
+</div>
+
+<div class="container">
+
+    <div class="table-responsive">
+    
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Descripción</th>
+                    <th></th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="delete(item)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        
+        </table>
+    </div>
+</div>

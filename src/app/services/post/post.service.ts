@@ -22,7 +22,7 @@ export class PostService {
   }
 
   serviceAddItem(item:Post){
-    // this.items.push(item);
+    this.items.push(item);
     // return false;
     
     let posts : Post[] = [];

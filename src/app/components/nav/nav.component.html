@@ -2,7 +2,7 @@
 TOP
 ======================================-->
 
-<div class="container-fluid barraSuperior" id="top" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+<div class="container-fluid barraSuperior" id="top">
 	
 	<div class="container">
 		
@@ -18,17 +18,28 @@ TOP
 
 			</div>
 
-			<!--=====================================
-			REGISTRO
-			======================================-->
-
 			<div class="col-md-3 col-sm-4 col-xs-12 registro">
 				
 				<ul>
 
-					<li>
-						<a routerLink="/ingresar">Ingresar</a>
-					</li>
+					<!-- LOGIN -->
+					<ng-container *ngIf="!loginService.ServiceLoggedIn(); else logout">
+						<li>
+							<a routerLink="/ingresar">Ingresar</a>
+						</li>
+					</ng-container>
+
+					<!-- LOGOUT -->
+					<ng-template #logout>
+						<li>
+							<a routerLink="/admin">Admin</a>
+						</li>
+						|
+						<li>
+							<a style="cursor: pointer;" (click)="loginService.ServiceLogout()">Cerrar Sesión</a>
+						</li>
+					</ng-template>
+
 
 				</ul>
 
