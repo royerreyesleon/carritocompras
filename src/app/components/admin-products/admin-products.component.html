@@ -2,11 +2,13 @@
     <h2 class="text-center">Productos</h2>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="row">
 
         <div class="col-md-5">
+
+            <h3 class="text-center">Agregar</h3>
 
             <form (submit)="addProduct(pTitle, pPriceBefore, pPriceNow, pDescription, pImg)">
 
@@ -54,20 +56,19 @@
                         </tr>
                     </thead>
                 
-                    <tbody>
-                        <tr >
-                            <td>Título</td>
-                            <td>Precio Anterior</td>
-                            <td>Precio Actual</td>
-                            <td>Descripción</td>
+                    <tbody class="small">
+                        <tr *ngFor="let item of items">
+                            <td>{{item.title}}</td>
+                            <td>{{item.price_before}}</td>
+                            <td>{{item.price_now}}</td>
+                            <td>{{item.description}}</td>
                             <td>
                                 <ul>
-                                    <li>* Etiquetas</li>
-                                    <li>* Etiquetas</li>
+                                    <li *ngFor="let label of item.labels">* {{label.description}}</li>
                                 </ul>
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-sm" >
+                                <button class="btn btn-danger btn-sm" (click)="delete(item)">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </td>

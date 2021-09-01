@@ -9,7 +9,20 @@ export class PostService {
   // items!: Post[];
   items!: Array<any>;
 
-  constructor() { }
+  constructor() {
+    this.items = [
+      {
+        name:"Royer Reyes León",
+        email:"royerleon7@gmail.com",
+        description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto."
+      },
+      {
+        name:"Test",
+        email:"test@gmail.com",
+        description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto."
+      }
+    ]
+  }
 
   serviceGetItems(){
     if(localStorage.getItem('posts') === null){
@@ -28,7 +41,8 @@ export class PostService {
     let posts : Post[] = [];
     
     if (localStorage.getItem('posts') === null) {
-      posts.push(item);
+      posts = this.items;
+      // posts.push(item);
       // CONVERTIR DE JSON A STRING.
       localStorage.setItem('posts', JSON.stringify(posts));
     }else{

@@ -18,11 +18,11 @@ export class ArticlesService {
         price_now    : 50,
         description  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.",
         labels : [
-          {descripction:"Nuevo"},
-          {descripction:"50% Rebaja"},
+          {description:"Nuevo"},
+          {description:"50% Rebaja"},
         ],
         imgs : [
-          {imagen:"imagen.png"}
+          {imagen:"./assets/template/1/curso01.jpg"}
         ]
       },
       {
@@ -33,11 +33,11 @@ export class ArticlesService {
         price_now    : 100,
         description  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.",
         labels : [
-          {descripction:"Nuevo"},
-          {descripction:"50% Rebaja"},
+          {description:"Nuevo"},
+          {description:"50% Rebaja"},
         ],
         imgs : [
-          {imagen:"imagen.png"}
+          {imagen:"./assets/template/1/curso03.jpg"}
         ]
       },
       {
@@ -48,11 +48,11 @@ export class ArticlesService {
         price_now    : 150,
         description  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.",
         labels : [
-          {descripction:"Nuevo"},
-                  {descripction:"50% Rebaja"},
+                  {description:"Nuevo"},
+                  {description:"50% Rebaja"},
                  ],
         imgs : [
-                    {imagen:"imagen.png"}
+                    {imagen:"./assets/template/1/curso04.jpg"}
                   ]
       },
       {
@@ -63,11 +63,11 @@ export class ArticlesService {
         price_now    : 200,
         description  : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.",
         labels : [
-                  {descripction:"Nuevo"},
-                  {descripction:"50% Rebaja"},
+                  {description:"Nuevo"},
+                  {description:"50% Rebaja"},
                  ],
         imgs : [
-                    {imagen:"imagen.png"}
+                    {imagen:"./assets/template/1/curso01.jpg"}
                   ]
       },
     ]
@@ -84,36 +84,39 @@ export class ArticlesService {
   }
 
 
-  /*
-  addTask(task:Task){
-    this.tasks.push(task);
+  serviceAddItem(item:Object){
+    this.items.push(item);
     // return false;
     
-    let tasks : Task[] = [];
+    let articles : Object[] = [];
+    
+    if (localStorage.getItem('articles') === null) {
+      
+      articles = this.items
+      // articles.push(this.items);
 
-    if (localStorage.getItem('tasks') === null) {
-      tasks.push(task);
-      // CONVERT ARRAY TO STRING WITH JSON.stringify 
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      // articles.push(item);
+      // CONVERTIR DE JSON A STRING.
+      localStorage.setItem('articles', JSON.stringify(articles));
     }else{
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-      tasks.push(task);
-      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      // CONVERTIR DE STRING A JSON.
+      articles = JSON.parse(localStorage.getItem('articles')!);
+      articles.push(item);
+      localStorage.setItem('articles', JSON.stringify(articles));
     }
-
+    
   }
-
-  deleteTask(task : Task){
-    for (let i = 0; i < this.tasks.length; i++) {
+  
+  ServiceDeleteItem(item : Object){
+    for (let i = 0; i < this.items.length; i++) {
       // const element = array[i];
-      if (task == this.tasks[i]) {
-        this.tasks.splice(i, 1);
+      if (item == this.items[i]) {
+        this.items.splice(i, 1);
         
-        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+          localStorage.setItem('articles', JSON.stringify(this.items));
 
       }
       
     }
   }
-  */
 }

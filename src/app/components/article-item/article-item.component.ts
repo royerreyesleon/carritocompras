@@ -13,7 +13,7 @@ export class ArticleItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }
