@@ -11,17 +11,19 @@ import { TokenInterceptorService } from "./services/token-interceptor/token-inte
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
 import { AdminConcernsComponent } from './components/admin-concerns/admin-concerns.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   // { path: '',              component: AboutComponent,  pathMatch: 'full'}
-  { path: 'articulos',        component: ArticlesComponent,},
-  { path: 'articulo/:id',     component: ArticleComponent,},
-  { path: 'ingresar',         component: LoginComponent,},
-  { path: 'admin',            component: AdminComponent,           canActivate:[AuthGuard]},
-  { path: 'admin/productos',  component: AdminProductsComponent,   canActivate:[AuthGuard]},
-  { path: 'admin/categorias', component: AdminCategoriesComponent, canActivate:[AuthGuard]},
-  { path: 'admin/inquietudes',component: AdminConcernsComponent,   canActivate:[AuthGuard]},
-  { path: '**',               component: ArticlesComponent,},
+  { path: 'articulos',         component: ArticlesComponent,},
+  { path: 'articulo/:id',      component: ArticleComponent,},
+  { path: 'ingresar',          component: LoginComponent,},
+  { path: 'admin',             component: AdminComponent,           canActivate:[AuthGuard]},
+  { path: 'admin/productos',   component: AdminProductsComponent,   canActivate:[AuthGuard]},
+  { path: 'admin/categorias',  component: AdminCategoriesComponent, canActivate:[AuthGuard]},
+  { path: 'admin/inquietudes', component: AdminConcernsComponent,   canActivate:[AuthGuard]},
+  { path: 'carrito-de-compras',component: ShoppingCartComponent},
+  { path: '**',                component: ArticlesComponent,},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: true, relativeLinkResolution:'legacy'})],

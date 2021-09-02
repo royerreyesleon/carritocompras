@@ -10,8 +10,6 @@ import Swal from 'sweetalert2'
 })
 export class AdminProductsComponent implements OnInit {
 
-  // imgBase64!: ArrayBuffer;
-  // items!: Object[];
   items!: Array<any>;
   imgBase64!: any;
 
@@ -32,8 +30,8 @@ export class AdminProductsComponent implements OnInit {
       price_now   : pPriceNow.value,
       description : pDescription.value,
       labels : [
-                  {descripction:"Nuevo"},
-                  {descripction:"50% Rebaja"},
+                  {description:"Nuevo"},
+                  {description:"50% Rebaja"},
                ],
       imgs : [
                 {imagen:this.imgBase64}

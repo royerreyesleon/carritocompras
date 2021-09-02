@@ -1,9 +1,5 @@
 <app-breadcrumb></app-breadcrumb>
 
-
-
-
-
 <!--=====================================
 INFOPRODUCTOS
 ======================================-->
@@ -16,26 +12,27 @@ INFOPRODUCTOS
 			<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
 
 				<figure class="visor">
-					<img id="lupa1" class="img-thumbnail" src="./assets/template/2/img-01.jpg"
-					(mouseover)="over('./assets/template/2/img-01.jpg')"
+					<img *ngFor="let img of item.imgs" class="img-thumbnail" src="{{img.imagen}}">
+
+					<img id="lupa1" class="img-thumbnail" src="./assets/template/1/img-01.jpg"
+					(mouseover)="over('./assets/template/1/img-01.jpg')"
+					(mouseout)="out()"
+					(mousemove)="move($event)"
+					>
+					<img id="lupa2" class="img-thumbnail" src="./assets/template/1/img-02.jpg"
+					(mouseover)="over('./assets/template/1/img-02.jpg')"
 					(mouseout)="out()"
 					(mousemove)="move($event)"
 					
 					>
-					<img id="lupa2" class="img-thumbnail" src="./assets/template/2/img-02.jpg"
-					(mouseover)="over('./assets/template/2/img-02.jpg')"
+					<img id="lupa3" class="img-thumbnail" src="./assets/template/1/img-03.jpg"
+					(mouseover)="over('./assets/template/1/img-03.jpg')"
 					(mouseout)="out()"
 					(mousemove)="move($event)"
 					
 					>
-					<img id="lupa3" class="img-thumbnail" src="./assets/template/2/img-03.jpg"
-					(mouseover)="over('./assets/template/2/img-03.jpg')"
-					(mouseout)="out()"
-					(mousemove)="move($event)"
-					
-					>
-					<img id="lupa4" class="img-thumbnail" src="./assets/template/2/img-04.jpg"
-					(mouseover)="over('./assets/template/2/img-04.jpg')"
+					<img id="lupa4" class="img-thumbnail" src="./assets/template/1/img-04.jpg"
+					(mouseover)="over('./assets/template/1/img-04.jpg')"
 					(mouseout)="out()"
 					(mousemove)="move($event)"
 					
@@ -45,17 +42,18 @@ INFOPRODUCTOS
 				<!-- Place somewhere in the <body> of your page -->
 				<div class="flexslider">
 					<ul class="slides">
-						<li>
-							<img src="./assets/template/2/img-01.jpg" (click)="imgClick(1)"/>
+						
+						<li >
+							<img src="./assets/template/1/img-01.jpg" (click)="imgClick(1)"/>
 						</li>
-						<li>
-							<img src="./assets/template/2/img-02.jpg" (click)="imgClick(2)"/>
+						<li >
+							<img src="./assets/template/1/img-02.jpg" (click)="imgClick(2)"/>
 						</li>
-						<li>
-							<img src="./assets/template/2/img-03.jpg" (click)="imgClick(3)"/>
+						<li >
+							<img src="./assets/template/1/img-03.jpg" (click)="imgClick(3)"/>
 						</li>
-						<li>
-							<img src="./assets/template/2/img-04.jpg" (click)="imgClick(4)"/>
+						<li >
+							<img src="./assets/template/1/img-04.jpg" (click)="imgClick(4)"/>
 						</li>
 					</ul>
 				</div>
@@ -94,7 +92,7 @@ INFOPRODUCTOS
 					
 					<h6>
 						
-						<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown" href="https://ecommerce.tutorialesatualcance.com/semibotas-ejecutivas-1">
+						<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown">
 							<i class="fa fa-plus"></i> Compartir
 						</a>
 
@@ -129,101 +127,93 @@ INFOPRODUCTOS
 				======================================-->
 
 			
-				<h1 class="text-muted text-uppercase">Semibotas Ejecutivas
+				<h1 class="text-muted text-uppercase">{{item.title}}
 					<br>
 					<small>
-						<span class="label label-warning">Nuevo</span>
-						<span class="label label-warning">50% off</span> 
+						<span class="label label-warning" style="margin-right: 2px;" *ngFor="let label of item.labels">{{label.description}}</span>
 					</small>
 				</h1>
 			
 				<h2 class="text-muted">
 					<span>
-						<strong class="oferta">USD $45</strong>
+						<strong class="oferta">MXN ${{item.price_before}}</strong>
 					</span>
 					&nbsp;
 					<span>
-						$22
+						${{item.price_now}}
 					</span>
 				</h2>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus, consectetur beatae fugit odio iure repudiandae quia distinctio, id ducimus molestiae. Obcaecati, unde. Illo molestiae dolorum, saepe nisi enim iusto.</p>				
+				<p>{{item.description}}</p>				
 			
 				<!--=====================================
-			CARACTERÍSTICAS DEL PRODUCTO
-			======================================-->
+				CARACTERÍSTICAS DEL PRODUCTO
+				======================================-->
 
-			<hr>
+				<hr>
 
-			<div class="form-group row">
+				<div class="form-group row">
+					
+					<div class="col-md-3 col-xs-12">
+						<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+							<option value="">Talla</option>
+							<option value="36" selected>36</option>
+							<option value="38">38</option>
+							<option value="40">40</option>
+							<option value=""></option>
+						</select>
+					</div>
 				
-			<div class="col-md-3 col-xs-12">
+					<div class="col-md-3 col-xs-12">
+						<select class="form-control seleccionarDetalle" id="seleccionarColor">
+							<option value="">Color</option>
+							<option value="rojo" selected>rojo</option>
+							<option value="negro">negro</option>
+							<option value="blanco">blanco</option>
+							<option value=""></option>
+						</select>
+					</div>
+					
+					<h4 class="col-md-12 col-sm-0 col-xs-0">
 
-								<select class="form-control seleccionarDetalle" id="seleccionarTalla">
-									
-									<option value="">Talla</option><option value="36">36</option><option value="38">38</option><option value="40">40</option><option value=""></option></select>
+						<hr>
 
-							</div><div class="col-md-3 col-xs-12">
+						<span class="label label-default" style="font-weight:100">
+							<i class="fa fa-clock-o" style="margin-right:5px"></i>
+							10 días hábiles para la entrega |
+							<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+							400 ventas |
+							<i class="fa fa-eye" style="margin:0px 5px"></i>
+							Visto por <span class="vistas" tipo="45">331</span> personas
+						</span>
 
-								<select class="form-control seleccionarDetalle" id="seleccionarColor">
-									
-									<option value="">Color</option><option value="rojo">rojo</option><option value="negro">negro</option><option value="blanco">blanco</option><option value=""></option></select>
+					</h4>
 
-							</div><h4 class="col-md-12 col-sm-0 col-xs-0">
+					<h4 class="col-lg-0 col-md-0 col-xs-12">
+						<hr>
+						<small>
+							<i class="fa fa-clock-o" style="margin-right:5px"></i>
+							10 días hábiles para la entrega <br>
+							<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
+							400 ventas <br>
+							<i class="fa fa-eye" style="margin:0px 5px"></i>
+							Visto por <span class="vistas" tipo="45">331</span> personas
+						</small>
+					</h4>
+				</div>
 
-							<hr>
+				<!--=====================================
+				BOTONES DE COMPRA
+				======================================-->
 
-							<span class="label label-default" style="font-weight:100">
-
-								<i class="fa fa-clock-o" style="margin-right:5px"></i>
-								10 días hábiles para la entrega |
-								<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-								400 ventas |
-								<i class="fa fa-eye" style="margin:0px 5px"></i>
-								Visto por <span class="vistas" tipo="45">331</span> personas
-
-							</span>
-
-						</h4>
-
-						<h4 class="col-lg-0 col-md-0 col-xs-12">
-
-							<hr>
-
-							<small>
-
-								<i class="fa fa-clock-o" style="margin-right:5px"></i>
-								10 días hábiles para la entrega <br>
-								<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
-								400 ventas <br>
-								<i class="fa fa-eye" style="margin:0px 5px"></i>
-								Visto por <span class="vistas" tipo="45">331</span> personas
-
-							</small>
-
-						</h4>
-			</div>
-
-			<!--=====================================
-			BOTONES DE COMPRA
-			======================================-->
-
-			<div class="row botonesCompra">
-
-			<div class="col-lg-6 col-md-8 col-xs-12"><button class="btn btn-default btn-block btn-lg backColor agregarCarrito" idproducto="5" imagen="https://ecommerce.tutorialesatualcance.com/backend/vistas/img/productos/calzado/calzado01.jpg" titulo="Semibotas Ejecutivas" precio="22" tipo="fisico" peso="1" style="background: rgb(71, 186, 193); color: rgb(255, 255, 255);">ADICIONAR AL CARRITO 
-
-								<i class="fa fa-shopping-cart"></i>
-
-								</button>
-
-							</div>
-			</div>
-
-
-
-
-
-
+				<div class="row botonesCompra">
+					<div class="col-lg-6 col-md-8 col-xs-12">
+						<button class="btn btn-default btn-block btn-lg backColor agregarCarrito" (click)="addCar(item)">
+							AGREGAR AL CARRITO 
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+				</div>
 
 
 				<!--=====================================
@@ -237,13 +227,8 @@ INFOPRODUCTOS
 				</figure>
 
 			</div>
-
-
-
 			
 		</div>
-
-	
 
 	</div>
 

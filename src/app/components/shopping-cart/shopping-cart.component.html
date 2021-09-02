@@ -1,0 +1,78 @@
+<div class="container-fluid well well-sm ">
+    <h2 class="text-center">Carrito de Compras</h2>
+</div>
+
+<div class="container">
+
+    <div class="table-responsive">
+    
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th></th>
+                    <th>Producto</th>
+                    <th>Precio Anterior</th>
+                    <th>Precio Actual</th>
+                    <th>Remover</th>
+                    <th></th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <tr *ngFor="let item of items; index as i; ">
+                    <td>{{i+1}}</td>
+                    <td>
+                        <img src="{{item.imgs[0].imagen}}" width="60" height="60" class="img-rounded">
+                    </td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.price_before}}</td>
+                    <td>{{item.price_now}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-md" (click)="delete(item)">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        
+        </table>
+
+
+        <!--=====================================
+        SUMA DEL TOTAL DE PRODUCTOS
+        ======================================-->
+
+        <div class="panel-body sumaCarrito">
+
+            <div class="col-md-4 col-sm-6 col-xs-12 pull-right well">
+                
+                <div class="col-xs-6">
+                    
+                    <h4>TOTAL:</h4>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <h4 class="sumaSubTotal"><strong>MXN $<span>{{total}}</span></strong></h4>
+
+                </div> 
+
+            </div>
+
+        </div>
+
+
+        <!--=====================================
+        BOTÓN CHECKOUT
+        ======================================-->
+        <div class="panel-heading cabeceraCheckout">
+            <button class="btn btn-default backColor btn-lg pull-right" (click)="clickBuy()">
+                REALIZAR PAGO
+            </button>
+        </div>
+
+
+    </div>
+</div>

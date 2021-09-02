@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from '../../models/Article';
 import { ArticlesService } from '../../services/articles/articles.service';
+import Swal from 'sweetalert2'
 
 declare var $:any;
 
@@ -12,27 +13,33 @@ declare var $:any;
 })
 export class ArticleComponent implements OnInit {
 
-  // constructor() { }
-
-  // @Input() items!: Article[];
-  // @Input() items!: Article;
-  @Input() items!: Array<any>;
-
+  item!: any;
+  items!: Array<any>;
 
   constructor(
     private route: ActivatedRoute,
     public itemService: ArticlesService,
   ) {
 
-    // route.queryParams.subscribe(p => console.log('p.myQueryParam',p));
   }
 
 
   ngOnInit(): void {
     // const id = Number(this.route.snapshot.paramMap.get('id'));
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
 
+    // TODOS LOS PRODUCTOS
+    this.items = this.itemService.serviceGetItems();
+
+    for (let i = 0; i < this.items.length; i++) {
+
+      if (id == this.items[i].id) {
+        this.item = this.items[i];
+      }
+      
+    }
+    
+    // SLIDER.
     $(".flexslider").flexslider({
       animation: "slide",
       controlNav: true,
@@ -42,13 +49,11 @@ export class ArticleComponent implements OnInit {
       itemMargin: 5
     });
 
-
+    // SCROLL TOP.
     $("html, body").animate({ scrollTop: "0" });
-
-    // MÁS PRODUCTOS.
-    this.items = this.itemService.serviceGetItems();
+    
   }
-
+  
   imgClick(test:any){
 
     $(".infoproducto figure.visor img").hide();
@@ -87,12 +92,16 @@ export class ArticleComponent implements OnInit {
     })
   }
 
-  /* ngAfterViewInit() 
-  {
-      // Tu código ...
-      console.log('load...');
-  } */
+  addCar(item :any){
+    console.log(item);
+    
+    this.itemService.ServiceAddCar(item);
 
-  
+    Swal.fire(
+      'OK!',
+      '¡Se ha agregado un nuevo producto al carrito de compras!',
+      'success'
+    );
 
+  }
 }

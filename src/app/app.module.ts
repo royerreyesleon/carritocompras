@@ -23,6 +23,8 @@ import { TokenInterceptorService } from "./services/token-interceptor/token-inte
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';
 import { AdminConcernsComponent } from './components/admin-concerns/admin-concerns.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -43,10 +45,12 @@ import { AdminConcernsComponent } from './components/admin-concerns/admin-concer
     AdminProductsComponent,
     AdminCategoriesComponent,
     AdminConcernsComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IvyCarouselModule
   ],
   providers: [
     AuthGuard,

@@ -2,30 +2,19 @@
 
 
     <figure>
-        
         <a routerLink="/articulo/{{item.id}}" class="pixelProducto">
-            
-            <!-- <center> -->
             <img src="{{item.imgs[0].imagen}}" class="img-responsive" width="100%">
-            <!-- </center> -->
-
         </a>
-
     </figure>
 
     <h4>
 
         <small>
-            
             <a routerLink="/articulo/1" class="pixelProducto">
-                
                 {{item.title}}
                 <br>
-                
                 <span class="label label-warning fontSize" style="margin-left: 1px;" *ngFor="let label of item.labels">{{label.descripction}}</span>
-                
             </a>	
-
         </small>			
 
     </h4>
@@ -44,18 +33,18 @@
     <div class="col-xs-6 enlaces">
         
         <div class="btn-group pull-right">
-            
-            <button type="button" class="btn btn-default btn-xs deseos">
+
+            <a routerLink="/articulo/{{item.id}}" class="btn btn-default btn-xs">
                 <i class="fa fa-heart"></i>
-            </button>
-            
-            <button type="button" class="btn btn-default btn-xs agregarCarrito">
+            </a>
+
+            <a routerLink="/articulo/{{item.id}}" class="btn btn-default btn-xs">
                 <i class="fa fa-shopping-cart"></i>
-            </button>
+            </a>
             
-            <button type="button" class="btn btn-default btn-xs agregarCarrito">
-                <i class="fa fa-shopping-cart"></i>
-            </button>
+            <a routerLink="/articulo/{{item.id}}" class="btn btn-default btn-xs">
+                <i class="fa fa-eye"></i>
+            </a>
 
         </div>
 

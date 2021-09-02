@@ -1,17 +1,90 @@
+<app-slideshow></app-slideshow>
+
+<!--=====================================
+ARTÍCULOS GRATUITOS
+======================================-->
 <div class="container-fluid well well-sm ">
     <h2 class="text-center">Artículos</h2>
 </div>
 
+<div class="container productos">
 
-<div class="container-fluid productos">
-	
-    <div class="container">
-
-        <ul class="grid2">
-
-            <app-article-item *ngFor="let item of items" [item]="item"></app-article-item>
-            
-        </ul>
+    <div class="row">
+        <div class="col-xs-12 tituloDestacado">
+            <div class="col-sm-6 col-xs-12">
+                <h1><small>ARTÍCULOS GRATUITOS </small></h1>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <a routerLink="/articulo/1" class="btn btn-default backColor pull-right">
+                    VER MÁS <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
     </div>
 
+    <ul class="grid2">
+        <app-article-item *ngFor="let item of items" [item]="item"></app-article-item>
+    </ul>
+</div>
+
+
+<!--=====================================
+LO MÁS VENDIDO
+======================================-->
+<div class="container-fluid well well-sm ">
+    <div class="clearfix"></div>
+</div>
+
+<div class="container productos">
+
+    <div class="row">
+        <div class="col-xs-12 tituloDestacado">
+            <div class="col-sm-6 col-xs-12">
+                <h1><small>LO MÁS VENDIDO </small></h1>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <a routerLink="/articulo/1" class="btn btn-default backColor pull-right">
+                    VER MÁS <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+    </div>
+
+    <ul class="grid2">
+        <app-article-item *ngFor="let item of items" [item]="item"></app-article-item>
+    </ul>
+</div>
+
+
+<!--=====================================
+LO MÁS VISTO
+======================================-->
+<div class="container-fluid well well-sm ">
+    <div class="clearfix"></div>
+</div>
+
+<div class="container productos">
+
+    <div class="row">
+        <div class="col-xs-12 tituloDestacado">
+            <div class="col-sm-6 col-xs-12">
+                <h1><small>LO MÁS VISTO </small></h1>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <a routerLink="/articulo/1" class="btn btn-default backColor pull-right">
+                    VER MÁS <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+    </div>
+
+    <ul class="grid2">
+        <app-article-item *ngFor="let item of items" [item]="item"></app-article-item>
+    </ul>
 </div>

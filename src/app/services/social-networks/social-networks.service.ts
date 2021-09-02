@@ -6,7 +6,6 @@ import { Social } from '../../models/Social';
 })
 export class SocialNetworksService {
 
-  // items: Object[];
   items : Social[];
   
   constructor() {

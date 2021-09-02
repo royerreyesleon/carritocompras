@@ -6,7 +6,6 @@ import { Post } from '../../models/Post';
 })
 export class PostService {
 
-  // items!: Post[];
   items!: Array<any>;
 
   constructor() {
@@ -42,7 +41,6 @@ export class PostService {
     
     if (localStorage.getItem('posts') === null) {
       posts = this.items;
-      // posts.push(item);
       // CONVERTIR DE JSON A STRING.
       localStorage.setItem('posts', JSON.stringify(posts));
     }else{
@@ -56,7 +54,6 @@ export class PostService {
   
   ServiceDeleteItem(item : Post){
     for (let i = 0; i < this.items.length; i++) {
-      // const element = array[i];
       if (item == this.items[i]) {
         this.items.splice(i, 1);
         

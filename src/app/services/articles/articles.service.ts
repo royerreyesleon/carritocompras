@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ArticlesService {
 
-  // items : Social[];
   items: Object[];
+  stock!: Array<any>;
   
   constructor() {
     this.items = [
@@ -70,7 +70,9 @@ export class ArticlesService {
                     {imagen:"./assets/template/1/curso01.jpg"}
                   ]
       },
-    ]
+    ];
+
+    this.stock = [];
   }
 
   serviceGetItems(){
@@ -109,14 +111,47 @@ export class ArticlesService {
   
   ServiceDeleteItem(item : Object){
     for (let i = 0; i < this.items.length; i++) {
-      // const element = array[i];
       if (item == this.items[i]) {
         this.items.splice(i, 1);
-        
           localStorage.setItem('articles', JSON.stringify(this.items));
+      }
+    }
+  }
 
+  ServiceAddCar(car : any){
+    this.stock.push(car);
+    let cars : Object[] = [];
+    
+    if (localStorage.getItem('car') === null) {
+      
+      cars = this.stock
+      localStorage.setItem('car', JSON.stringify(cars));
+    }else{
+      cars = JSON.parse(localStorage.getItem('car')!);
+      cars.push(car);
+      localStorage.setItem('car', JSON.stringify(cars));
+    }
+  }
+
+  serviceGetItemsCar(){
+
+    if(localStorage.getItem('car') === null){
+      return this.stock;
+    }else{
+      this.stock = JSON.parse(localStorage.getItem('car')!);
+      return this.stock;
+    }
+    
+  }
+
+  ServiceDeleteItemCar(item : Object){
+    for (let i = 0; i < this.stock.length; i++) {
+      if (item == this.stock[i]) {
+        this.stock.splice(i, 1);
+          localStorage.setItem('car', JSON.stringify(this.stock));
       }
       
     }
   }
+
 }
