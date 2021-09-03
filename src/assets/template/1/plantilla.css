@@ -134,9 +134,9 @@ REDES SOCIALES
 ERROR 404, VERIFICAR
 =============================================*/
 
-.error404. .verificar{
+/* .error404. .verificar{
 	color:#333;
-}
+} */
 
 /*=============================================
 SCROLL UP
@@ -146,7 +146,7 @@ SCROLL UP
 	right: 20px;
 	width: 50px;
 	height: 50px;
-	background: url(../img/plantilla/flecha.jpg);
+	/* background: url(../img/plantilla/flecha.jpg); */
 }
 
 

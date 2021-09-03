@@ -28,8 +28,17 @@
             ],
             "styles": [
               "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/flexslider/flexslider.css",
-              "./node_modules/sweetalert2/dist/sweetalert2.min.css"
+              "./node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./src/assets/template/1/plantilla.css",
+              "./src/assets/template/1/cabezote.css",
+              "./src/assets/template/1/productos.css",
+              "./src/assets/template/1/infoproducto.css",
+              "./src/assets/template/1/ofertas.css",
+              "./src/assets/template/1/footer.css"
+
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -42,13 +51,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "4mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "4mb"
                 }
               ],
               "fileReplacements": [
