@@ -38,7 +38,6 @@
               "./src/assets/template/1/infoproducto.css",
               "./src/assets/template/1/ofertas.css",
               "./src/assets/template/1/footer.css"
-
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -113,6 +112,10 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
