@@ -10,11 +10,11 @@ export class SocialNetworksService {
   
   constructor() {
     this.items = [
-      {icon: "fa fa-facebook",  url: "https://www.facebook.com/Faastxapp"},
-      {icon: "fa fa-instagram", url: "https://www.instagram.com/_faastx/"},
-      {icon: "fa fa-envelope",  url: "mailto:hola@faastx.com"},
-      {icon: "fa fa-apple",     url: "https://apps.apple.com/us/app/faastx-mercado/id1479666755"},
-      {icon: "fa fa-android",   url: "https://play.google.com/store/apps/details?id=com.faastx.user&hl=es_MX&gl=US"}
+      {icon: "fa fa-facebook",  url: "https://www.facebook.com/"},
+      {icon: "fa fa-instagram", url: "https://www.instagram.com/"},
+      {icon: "fa fa-envelope",  url: "https://mail.google.com/mail/"},
+      {icon: "fa fa-apple",     url: "https://apps.apple.com/"},
+      {icon: "fa fa-android",   url: "https://play.google.com/"}
     ]
   }
 
